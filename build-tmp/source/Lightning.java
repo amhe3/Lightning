@@ -15,10 +15,10 @@ import java.io.IOException;
 public class Lightning extends PApplet {
 
 
-int startX = 0;
+int startX = 150;
 int startY = 150;
 int endX = 0;
-int endY = 150;
+int endY = 0;
 
 public void setup()
 {
@@ -28,27 +28,26 @@ public void setup()
 }
 public void draw()
 {
-	double dRandom =  Math.random();
-
-	//stroke((int) (Math.random()*5) + 10);
-	//stroke(0);
-
-	while(endX<300)
+	while(endY<300)
 	{
-		int endX = startX + ((int) (dRandom*9));
-		int endY = startY + ((int) ((dRandom*18)-9));
-		stroke(0);
+		endY = startY + ((int) (Math.random()*9));
+		endX = startX + ((int) ((Math.random()*18)-9));
+		stroke((int) (Math.random()*50)+125);
 		line(startX, startY, endX, endY);
-		int startX = endX;
-		int startY = endY;
+		startX = endX;
+		startY = endY;
 	}
+	  noStroke();
+  fill(0, 100, 0);
+  rect(0, 275, 300, 25); //grass
 }
 public void mousePressed()
 {
-	int startX = 0;
-	int startY = 150;
-	int endX = 0;
-	int endY = 150;
+	background(25, 25, 112);
+	startX = 150;
+	startY = 0;
+	endX = 150;
+	endY = 0;
 }
 
   static public void main(String[] passedArgs) {
