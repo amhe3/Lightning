@@ -37,12 +37,12 @@ public void draw()
 		startX = endX;
 		startY = endY;
 	}*/
-	Lightning middle = new Lightning(150, 0);
-	Lightning left = new Lightning(10, 0);
-	Lightning right = new Lightning(190, 0);
-	middle.bolt();
-	left.bolt();
-	right.bolt();
+	Lightning middle = new Lightning(150, 0, 150, 0);
+	Lightning left = new Lightning(10, 0, 10, 0);
+	Lightning right = new Lightning(190, 0, 190, 0);
+	middle.show();
+	left.show();
+	right.show();
 	noStroke();
   	fill(0, 100, 0);
   	rect(0, 275, 300, 25); //grass
@@ -57,14 +57,15 @@ class Lightning
 	int endX = 150;
 	int endY = 0;*/
 	int startX, startY, endX, endY;
-	Lightning (int x, int y)
+	Lightning(int x, int y, int z, int a)
 	{
 		startX = x;
-		endX = x;
-		startY = y;
-		endY = y;
+		endX = y;
+		startY = z;
+		endY = a;
 	}
-	public void bolt()
+
+	public void show()
 	{
 		while(endY<300)
 		{
@@ -78,7 +79,7 @@ class Lightning
 	}
 }
 
-public void mousePressed()
+/*void mousePressed()
 {
 	background(25, 25, 112);
 	startX = 150;
@@ -86,7 +87,7 @@ public void mousePressed()
 	endX = 150;
 	endY = 0;
 }
-
+*/
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Lightning" };
     if (passedArgs != null) {
