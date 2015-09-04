@@ -15,10 +15,10 @@ import java.io.IOException;
 public class Lightning extends PApplet {
 
 
-/*int startX = 150;
-int startY = 0;
-int endX = 150;
-int endY = 0;*/
+int startX = 160;
+int startY = 160;
+int endX = 160;
+int endY = 160;
 
 public void setup()
 {
@@ -28,21 +28,17 @@ public void setup()
 }
 public void draw()
 {
-	/*while(endY<300)
+	while(endY>0)
 	{
-		endY = startY + ((int) (Math.random()*9));
-		endX = startX + ((int) ((Math.random()*18)-9));
+		endY = startY - ((int) (Math.random()*9));
+		endX = startX - ((int) ((Math.random()*18)-9));
+		//endY = startY - ((int) ((Math.random()*18)-9));
+		//endX = startX - ((int) (Math.random()*9));
 		stroke((int) (Math.random()*100)+100, (int) (Math.random()*100)+100, (int) (Math.random()*100)+100);
 		line(startX, startY, endX, endY);
 		startX = endX;
 		startY = endY;
-	}*/
-	Lightning middle = new Lightning(150, 0, 150, 0);
-	Lightning left = new Lightning(10, 0, 10, 0);
-	Lightning right = new Lightning(190, 0, 190, 0);
-	middle.show();
-	left.show();
-	right.show();
+	}
 	noStroke();
   	fill(0, 100, 0);
   	rect(0, 275, 300, 25); //grass
@@ -50,44 +46,14 @@ public void draw()
   	rect(0, 0, 300, 13); //cloud
 }
 
-class Lightning
-{
-	/*int startX = 150;
-	int startY = 0;
-	int endX = 150;
-	int endY = 0;*/
-	int startX, startY, endX, endY;
-	Lightning(int x, int y, int z, int a)
-	{
-		startX = x;
-		endX = y;
-		startY = z;
-		endY = a;
-	}
-
-	public void show()
-	{
-		while(endY<300)
-		{
-			endY = startY + ((int) (Math.random()*9));
-			endX = startX + ((int) ((Math.random()*18)-9));
-			stroke((int) (Math.random()*100)+100, (int) (Math.random()*100)+100, (int) (Math.random()*100)+100);
-			line(startX, startY, endX, endY);
-			startX = endX;
-			startY = endY;
-		}
-	}
-}
-
-/*void mousePressed()
+public void mousePressed()
 {
 	background(25, 25, 112);
-	startX = 150;
-	startY = 0;
-	endX = 150;
-	endY = 0;
+	startX = 160;
+	startY = 160;
+	endX = 160;
+	endY = 160;
 }
-*/
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Lightning" };
     if (passedArgs != null) {
